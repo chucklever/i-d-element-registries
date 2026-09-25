@@ -789,7 +789,7 @@ unassigned bit.
 | 0x00200000 | WANT_OPEN_XOR_DELEGATION | 4.2+ | {{RFC9754}} |
 {: #open-access-initial title="Initial contents of the NFSv4 OPEN Share Access Flags registry"}
 
-Values 0x00000600 through 0x0000FF00 of the WANT_DELEG_MASK
+Values 0x00000600 through 0x0000FE00 of the WANT_DELEG_MASK
 subfield, bits 0x00000004 through 0x00000080, bits 0x00040000
 through 0x00080000, and bits 0x00400000 and above are unassigned.
 
