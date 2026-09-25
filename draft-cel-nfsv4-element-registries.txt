@@ -216,8 +216,8 @@ Table of Contents
 
    *  Values are assigned sequentially, starting from the lowest
       unassigned value that is not reserved and is within the range the
-      registry makes available for assignment.  IANA MUST NOT assign a
-      value that has been previously assigned, even if the corresponding
+      registry makes available for assignment.  A value that has been
+      assigned is never assigned again, even if the corresponding
       element has since been withdrawn from every minor version, because
       Section 4.2 of [RFC8178] prohibits reuse of a value.
 
@@ -975,7 +975,7 @@ Table of Contents
    +-----+--------------------+--------------------+--------+---------+
    |   42| space_avail        | uint64_t           |4.0+    |[RFC7530]|
    +-----+--------------------+--------------------+--------+---------+
-   |   43| space_free         | length4            |4.0+    |[RFC7530]|
+   |   43| space_free         | uint64_t           |4.0+    |[RFC7530]|
    +-----+--------------------+--------------------+--------+---------+
    |   44| space_total        | uint64_t           |4.0+    |[RFC7530]|
    +-----+--------------------+--------------------+--------+---------+
@@ -1125,39 +1125,43 @@ Table of Contents
    unassigned value; a new flag outside it is assigned the lowest
    unassigned bit.
 
-     +============+==========================+==========+===========+
-     |      Value | Name                     | Versions | Reference |
-     +============+==========================+==========+===========+
-     | 0x00000001 | READ                     | 4.0+     | [RFC7530] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000002 | WRITE                    | 4.0+     | [RFC7530] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000003 | BOTH                     | 4.0+     | [RFC7530] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000000 | WANT_NO_PREFERENCE       | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000100 | WANT_READ_DELEG          | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000200 | WANT_WRITE_DELEG         | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000300 | WANT_ANY_DELEG           | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000400 | WANT_NO_DELEG            | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00000500 | WANT_CANCEL              | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x0000FF00 | WANT_DELEG_MASK          | 4.1+     | [RFC8881] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00100000 | WANT_DELEG_TIMESTAMPS    | 4.2+     | [RFC9754] |
-     +------------+--------------------------+----------+-----------+
-     | 0x00200000 | WANT_OPEN_XOR_DELEGATION | 4.2+     | [RFC9754] |
-     +------------+--------------------------+----------+-----------+
+   +==========+====================================+========+=========+
+   |     Value| Name                               |Versions|Reference|
+   +==========+====================================+========+=========+
+   |0x00000001| READ                               |4.0+    |[RFC7530]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000002| WRITE                              |4.0+    |[RFC7530]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000003| BOTH                               |4.0+    |[RFC7530]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000000| WANT_NO_PREFERENCE                 |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000100| WANT_READ_DELEG                    |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000200| WANT_WRITE_DELEG                   |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000300| WANT_ANY_DELEG                     |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000400| WANT_NO_DELEG                      |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00000500| WANT_CANCEL                        |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x0000FF00| WANT_DELEG_MASK                    |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00010000| WANT_SIGNAL_DELEG_WHEN_RESRC_AVAIL |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00020000| WANT_PUSH_DELEG_WHEN_UNCONTENDED   |4.1+    |[RFC8881]|
+   +----------+------------------------------------+--------+---------+
+   |0x00100000| WANT_DELEG_TIMESTAMPS              |4.2+    |[RFC9754]|
+   +----------+------------------------------------+--------+---------+
+   |0x00200000| WANT_OPEN_XOR_DELEGATION           |4.2+    |[RFC9754]|
+   +----------+------------------------------------+--------+---------+
 
-         Table 6: Initial contents of the NFSv4 OPEN Share Access
-                              Flags registry
+      Table 6: Initial contents of the NFSv4 OPEN Share Access Flags
+                                 registry
 
-   Values 0x00000600 through 0x0000FF00 of the WANT_DELEG_MASK subfield,
-   bits 0x00000004 through 0x00000080, bits 0x00010000 through
+   Values 0x00000600 through 0x0000FE00 of the WANT_DELEG_MASK subfield,
+   bits 0x00000004 through 0x00000080, bits 0x00040000 through
    0x00080000, and bits 0x00400000 and above are unassigned.
 
 5.9.  NFSv4 OPEN Result Flags Registry
@@ -1351,6 +1355,16 @@ Appendix A.  Open Issues
       Section 15.1.16.3 of [RFC8881] (NFS4ERR_NXIO, 6, shown as 5).  The
       registry uses the values from the XDR in [RFC5662].  Errata should
       be filed if none exist.
+
+   *  NFS4ERR_RESOURCE is absent from every NFSv4.1 error list in
+      [RFC8881], including Section 15.1.16 of [RFC8881], which
+      enumerates the NFSv4.0 errors that NFSv4.1 obsoletes.  The only
+      statement that NFSv4.1 withdraws it is a comment in the [RFC5662]
+      XDR description.  A comment in an XDR description is not
+      normative, and Section 8.2 of [RFC8178] requires explicit removal,
+      so the registry's Versions value of "4.0" for this code rests on
+      the XDR comment alone.  An erratum against [RFC8881] may be
+      warranted.
 
 Acknowledgments
 

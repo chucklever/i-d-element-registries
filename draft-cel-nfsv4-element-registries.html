@@ -1382,8 +1382,8 @@ not been either registered or early-allocated.<a href="#section-3.2-2.3.1" class
           <li class="normal" id="section-3.2-2.4">
             <p id="section-3.2-2.4.1">Values are assigned sequentially, starting from the lowest
 unassigned value that is not reserved and is within the range the
-registry makes available for assignment.  IANA <span class="bcp14">MUST NOT</span> assign a
-value that has been previously assigned, even if the corresponding
+registry makes available for assignment.  A value that has been
+assigned is never assigned again, even if the corresponding
 element has since been withdrawn from every minor version, because
 <span><a href="https://rfc-editor.org/rfc/rfc8178#section-4.2" class="relref">Section 4.2</a> of [<a href="#RFC8178" class="cite xref">RFC8178</a>]</span> prohibits reuse of a value.<a href="#section-3.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
@@ -3772,7 +3772,7 @@ assignment.<a href="#section-5.6-5" class="pilcrow">¶</a></p>
             <tr>
               <td class="text-right" rowspan="1" colspan="1">43</td>
               <td class="text-left" rowspan="1" colspan="1">space_free</td>
-              <td class="text-left" rowspan="1" colspan="1">length4</td>
+              <td class="text-left" rowspan="1" colspan="1">uint64_t</td>
               <td class="text-left" rowspan="1" colspan="1">4.0+</td>
               <td class="text-left" rowspan="1" colspan="1">
                 <span>[<a href="#RFC7530" class="cite xref">RFC7530</a>]</span>
@@ -4387,6 +4387,22 @@ unassigned bit.<a href="#section-5.8-3" class="pilcrow">¶</a></p>
 </td>
             </tr>
             <tr>
+              <td class="text-right" rowspan="1" colspan="1">0x00010000</td>
+              <td class="text-left" rowspan="1" colspan="1">WANT_SIGNAL_DELEG_WHEN_RESRC_AVAIL</td>
+              <td class="text-left" rowspan="1" colspan="1">4.1+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span>[<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>
+</td>
+            </tr>
+            <tr>
+              <td class="text-right" rowspan="1" colspan="1">0x00020000</td>
+              <td class="text-left" rowspan="1" colspan="1">WANT_PUSH_DELEG_WHEN_UNCONTENDED</td>
+              <td class="text-left" rowspan="1" colspan="1">4.1+</td>
+              <td class="text-left" rowspan="1" colspan="1">
+                <span>[<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>
+</td>
+            </tr>
+            <tr>
               <td class="text-right" rowspan="1" colspan="1">0x00100000</td>
               <td class="text-left" rowspan="1" colspan="1">WANT_DELEG_TIMESTAMPS</td>
               <td class="text-left" rowspan="1" colspan="1">4.2+</td>
@@ -4405,8 +4421,8 @@ unassigned bit.<a href="#section-5.8-3" class="pilcrow">¶</a></p>
           </tbody>
         </table>
 </div>
-<p id="section-5.8-5">Values 0x00000600 through 0x0000FF00 of the WANT_DELEG_MASK
-subfield, bits 0x00000004 through 0x00000080, bits 0x00010000
+<p id="section-5.8-5">Values 0x00000600 through 0x0000FE00 of the WANT_DELEG_MASK
+subfield, bits 0x00000004 through 0x00000080, bits 0x00040000
 through 0x00080000, and bits 0x00400000 and above are unassigned.<a href="#section-5.8-5" class="pilcrow">¶</a></p>
 </section>
 </div>
@@ -4712,6 +4728,17 @@ shown as 10026), <span><a href="https://rfc-editor.org/rfc/rfc8881#section-15.1.
 <span><a href="https://rfc-editor.org/rfc/rfc8881#section-15.1.16.3" class="relref">Section 15.1.16.3</a> of [<a href="#RFC8881" class="cite xref">RFC8881</a>]</span> (NFS4ERR_NXIO, 6, shown as 5).
 The registry uses the values from the XDR in <span>[<a href="#RFC5662" class="cite xref">RFC5662</a>]</span>.  Errata
 should be filed if none exist.<a href="#appendix-A-3.4.1" class="pilcrow">¶</a></p>
+</li>
+        <li class="normal" id="appendix-A-3.5">
+          <p id="appendix-A-3.5.1">NFS4ERR_RESOURCE is absent from every NFSv4.1 error list in
+<span>[<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>, including <span><a href="https://rfc-editor.org/rfc/rfc8881#section-15.1.16" class="relref">Section 15.1.16</a> of [<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>, which
+enumerates the NFSv4.0 errors that NFSv4.1 obsoletes.  The only
+statement that NFSv4.1 withdraws it is a comment in the <span>[<a href="#RFC5662" class="cite xref">RFC5662</a>]</span>
+XDR description.  A comment in an XDR description is not
+normative, and <span><a href="https://rfc-editor.org/rfc/rfc8178#section-8.2" class="relref">Section 8.2</a> of [<a href="#RFC8178" class="cite xref">RFC8178</a>]</span> requires explicit
+removal, so the registry's Versions value of "4.0" for this code
+rests on the XDR comment alone.  An erratum against <span>[<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>
+may be warranted.<a href="#appendix-A-3.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 </section>
