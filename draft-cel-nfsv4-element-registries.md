@@ -875,6 +875,16 @@ tracker, where the detail and the discussion live.
   The registry uses the values from the XDR in {{RFC5662}}.  Errata
   should be filed if none exist.
 
+* NFS4ERR_RESOURCE is absent from every NFSv4.1 error list in
+  {{RFC8881}}, including {{Section 15.1.16 of RFC8881}}, which
+  enumerates the NFSv4.0 errors that NFSv4.1 obsoletes.  The only
+  statement that NFSv4.1 withdraws it is a comment in the {{RFC5662}}
+  XDR description.  A comment in an XDR description is not
+  normative, and {{Section 8.2 of RFC8178}} requires explicit
+  removal, so the registry's Versions value of "4.0" for this code
+  rests on the XDR comment alone.  An erratum against {{RFC8881}}
+  may be warranted.
+
 # Acknowledgments
 {:numbered="false"}
 
