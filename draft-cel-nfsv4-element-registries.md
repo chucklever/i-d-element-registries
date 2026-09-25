@@ -682,7 +682,7 @@ assignment.
 | 40 | quota_used | uint64_t | 4.0+ | {{RFC7530}} |
 | 41 | rawdev | specdata4 | 4.0+ | {{RFC7530}} |
 | 42 | space_avail | uint64_t | 4.0+ | {{RFC7530}} |
-| 43 | space_free | length4 | 4.0+ | {{RFC7530}} |
+| 43 | space_free | uint64_t | 4.0+ | {{RFC7530}} |
 | 44 | space_total | uint64_t | 4.0+ | {{RFC7530}} |
 | 45 | space_used | uint64_t | 4.0+ | {{RFC7530}} |
 | 46 | system | bool | 4.0+ | {{RFC7530}} |
