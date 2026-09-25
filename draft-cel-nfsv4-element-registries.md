@@ -783,12 +783,14 @@ unassigned bit.
 | 0x00000400 | WANT_NO_DELEG | 4.1+ | {{RFC8881}} |
 | 0x00000500 | WANT_CANCEL | 4.1+ | {{RFC8881}} |
 | 0x0000FF00 | WANT_DELEG_MASK | 4.1+ | {{RFC8881}} |
+| 0x00010000 | WANT_SIGNAL_DELEG_WHEN_RESRC_AVAIL | 4.1+ | {{RFC8881}} |
+| 0x00020000 | WANT_PUSH_DELEG_WHEN_UNCONTENDED | 4.1+ | {{RFC8881}} |
 | 0x00100000 | WANT_DELEG_TIMESTAMPS | 4.2+ | {{RFC9754}} |
 | 0x00200000 | WANT_OPEN_XOR_DELEGATION | 4.2+ | {{RFC9754}} |
 {: #open-access-initial title="Initial contents of the NFSv4 OPEN Share Access Flags registry"}
 
 Values 0x00000600 through 0x0000FF00 of the WANT_DELEG_MASK
-subfield, bits 0x00000004 through 0x00000080, bits 0x00010000
+subfield, bits 0x00000004 through 0x00000080, bits 0x00040000
 through 0x00080000, and bits 0x00400000 and above are unassigned.
 
 ## NFSv4 OPEN Result Flags Registry {#iana-open-result}
