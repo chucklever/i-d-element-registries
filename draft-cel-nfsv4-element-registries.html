@@ -1575,12 +1575,11 @@ prefixed with "OP_" (for example, OP_GETATTR for the operation named
 GETATTR).  By convention, the XDR structures carrying the
 operation's arguments and results are the Name suffixed with
 "4args" and "4res"; the registry does not record these names.<a href="#section-5.3-2" class="pilcrow">¶</a></p>
-<p id="section-5.3-3">Values 0 through 2 are Reserved because the base specifications
-begin the nfs_opnum4 enumeration at 3.<span class="cref" id="reserved">Editor's note: the base specifications give no reason
-for starting at 3.  If the Working Group would rather leave 0
-through 2 unassigned, the three Reserved entries can be dropped
-from both operation registries.</span>  All other
-unassigned values are available for assignment.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
+<p id="section-5.3-3">Values 0 through 2 are Reserved: the base specifications state that
+operations 0 and 1 are not defined for the COMPOUND procedure, and
+that operation 2 is reserved for future definition and use with
+minor versioning (<span><a href="https://rfc-editor.org/rfc/rfc7530#section-15.2.3" class="relref">Section 15.2.3</a> of [<a href="#RFC7530" class="cite xref">RFC7530</a>]</span>, <span><a href="https://rfc-editor.org/rfc/rfc8881#section-16.2.3" class="relref">Section 16.2.3</a> of [<a href="#RFC8881" class="cite xref">RFC8881</a>]</span>).  All other unassigned values are available for
+assignment.<a href="#section-5.3-3" class="pilcrow">¶</a></p>
 <span id="name-initial-contents-of-the-nfs"></span><div id="ops-initial">
 <table class="center" id="table-1">
           <caption>
@@ -2394,10 +2393,11 @@ code that indicates failure is upper case and is prefixed with
 indicate failure is NFS4_OK.<a href="#section-5.5-2" class="pilcrow">¶</a></p>
 <p id="section-5.5-3">Values below 10000 mirror the NFS version 3 status codes
 <span>[<a href="#RFC1813" class="cite xref">RFC1813</a>]</span>, which in turn match traditional errno values, and are
-not available for assignment.  Value 10002 is Reserved because the
-NFSv3 status code with that value, NFS3ERR_NOT_SYNC, has no NFSv4
-counterpart, and value 10073 is Reserved because <span>[<a href="#RFC5662" class="cite xref">RFC5662</a>]</span> left it
-unused.  All other unassigned values of 10001 or above are available
+not available for assignment.  Value 19 is Reserved because
+<span>[<a href="#RFC3010" class="cite xref">RFC3010</a>]</span> assigned it to NFS4ERR_NODEV and its successors dropped
+that code.  Value 10002 is Reserved because the NFSv3 status code
+with that value, NFS3ERR_NOT_SYNC, has no NFSv4 counterpart, and
+value 10073 is Reserved because <span>[<a href="#RFC5662" class="cite xref">RFC5662</a>]</span> left it unused.  All other unassigned values of 10001 or above are available
 for assignment.<a href="#section-5.5-3" class="pilcrow">¶</a></p>
 <p id="section-5.5-4">The XDR constants for the base minor versions appear in the
 companion XDR descriptions <span>[<a href="#RFC7531" class="cite xref">RFC7531</a>]</span>, <span>[<a href="#RFC5662" class="cite xref">RFC5662</a>]</span>, and
@@ -2480,6 +2480,12 @@ companion XDR descriptions <span>[<a href="#RFC7531" class="cite xref">RFC7531</
               <td class="text-left" rowspan="1" colspan="1">
                 <span>[<a href="#RFC7530" class="cite xref">RFC7530</a>]</span>
 </td>
+            </tr>
+            <tr>
+              <td class="text-right" rowspan="1" colspan="1">19</td>
+              <td class="text-left" rowspan="1" colspan="1">Reserved</td>
+              <td class="text-left" rowspan="1" colspan="1"> </td>
+              <td class="text-left" rowspan="1" colspan="1"> </td>
             </tr>
             <tr>
               <td class="text-right" rowspan="1" colspan="1">20</td>
@@ -4673,6 +4679,10 @@ the delegation type named READ).<a href="#section-5.10-2" class="pilcrow">¶</a>
 <dt id="RFC1813">[RFC1813]</dt>
         <dd>
 <span class="refAuthor">Callaghan, B.</span>, <span class="refAuthor">Pawlowski, B.</span>, and <span class="refAuthor">P. Staubach</span>, <span class="refTitle">"NFS Version 3 Protocol Specification"</span>, <span class="seriesInfo">RFC 1813</span>, <span class="seriesInfo">DOI 10.17487/RFC1813</span>, <time datetime="1995-06" class="refDate">June 1995</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc1813">https://www.rfc-editor.org/rfc/rfc1813</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC3010">[RFC3010]</dt>
+        <dd>
+<span class="refAuthor">Shepler, S.</span>, <span class="refAuthor">Callaghan, B.</span>, <span class="refAuthor">Robinson, D.</span>, <span class="refAuthor">Thurlow, R.</span>, <span class="refAuthor">Beame, C.</span>, <span class="refAuthor">Eisler, M.</span>, and <span class="refAuthor">D. Noveck</span>, <span class="refTitle">"NFS version 4 Protocol"</span>, <span class="seriesInfo">RFC 3010</span>, <span class="seriesInfo">DOI 10.17487/RFC3010</span>, <time datetime="2000-12" class="refDate">December 2000</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc3010">https://www.rfc-editor.org/rfc/rfc3010</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC4506">[RFC4506]</dt>
         <dd>

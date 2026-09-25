@@ -362,13 +362,12 @@ Table of Contents
    arguments and results are the Name suffixed with "4args" and "4res";
    the registry does not record these names.
 
-   Values 0 through 2 are Reserved because the base specifications begin
-   the nfs_opnum4 enumeration at 3.
-   // Editor's note: the base specifications give no reason for starting
-   // at 3.  If the Working Group would rather leave 0 through 2
-   // unassigned, the three Reserved entries can be dropped from both
-   // operation registries.  All other unassigned values are available
-   for assignment.
+   Values 0 through 2 are Reserved: the base specifications state that
+   operations 0 and 1 are not defined for the COMPOUND procedure, and
+   that operation 2 is reserved for future definition and use with minor
+   versioning (Section 15.2.3 of [RFC7530], Section 16.2.3 of
+   [RFC8881]).  All other unassigned values are available for
+   assignment.
 
      +=======+======================+==========+=====================+
      | Value | Name                 | Versions | Reference           |
@@ -605,10 +604,12 @@ Table of Contents
 
    Values below 10000 mirror the NFS version 3 status codes [RFC1813],
    which in turn match traditional errno values, and are not available
-   for assignment.  Value 10002 is Reserved because the NFSv3 status
-   code with that value, NFS3ERR_NOT_SYNC, has no NFSv4 counterpart, and
-   value 10073 is Reserved because [RFC5662] left it unused.  All other
-   unassigned values of 10001 or above are available for assignment.
+   for assignment.  Value 19 is Reserved because [RFC3010] assigned it
+   to NFS4ERR_NODEV and its successors dropped that code.  Value 10002
+   is Reserved because the NFSv3 status code with that value,
+   NFS3ERR_NOT_SYNC, has no NFSv4 counterpart, and value 10073 is
+   Reserved because [RFC5662] left it unused.  All other unassigned
+   values of 10001 or above are available for assignment.
 
    The XDR constants for the base minor versions appear in the companion
    XDR descriptions [RFC7531], [RFC5662], and [RFC7863].
@@ -632,6 +633,8 @@ Table of Contents
    |    17 | NFS4ERR_EXIST                     | 4.0+     | [RFC7530] |
    +-------+-----------------------------------+----------+-----------+
    |    18 | NFS4ERR_XDEV                      | 4.0+     | [RFC7530] |
+   +-------+-----------------------------------+----------+-----------+
+   |    19 | Reserved                          |          |           |
    +-------+-----------------------------------+----------+-----------+
    |    20 | NFS4ERR_NOTDIR                    | 4.0+     | [RFC7530] |
    +-------+-----------------------------------+----------+-----------+
@@ -1308,6 +1311,11 @@ Table of Contents
               Version 3 Protocol Specification", RFC 1813,
               DOI 10.17487/RFC1813, June 1995,
               <https://www.rfc-editor.org/rfc/rfc1813>.
+
+   [RFC3010]  Shepler, S., Callaghan, B., Robinson, D., Thurlow, R.,
+              Beame, C., Eisler, M., and D. Noveck, "NFS version 4
+              Protocol", RFC 3010, DOI 10.17487/RFC3010, December 2000,
+              <https://www.rfc-editor.org/rfc/rfc3010>.
 
    [RFC4506]  Eisler, M., Ed., "XDR: External Data Representation
               Standard", STD 67, RFC 4506, DOI 10.17487/RFC4506, May
