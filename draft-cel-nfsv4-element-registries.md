@@ -51,6 +51,7 @@ normative:
 
 informative:
   RFC1813:
+  RFC3010:
   RFC4506:
   RFC5661:
   RFC7531:
@@ -337,14 +338,12 @@ GETATTR).  By convention, the XDR structures carrying the
 operation's arguments and results are the Name suffixed with
 "4args" and "4res"; the registry does not record these names.
 
-Values 0 through 2 are Reserved because the base specifications
-begin the nfs_opnum4 enumeration at 3.[^reserved]  All other
-unassigned values are available for assignment.
-
-[^reserved]: Editor's note: the base specifications give no reason
-    for starting at 3.  If the Working Group would rather leave 0
-    through 2 unassigned, the three Reserved entries can be dropped
-    from both operation registries.
+Values 0 through 2 are Reserved: the base specifications state that
+operations 0 and 1 are not defined for the COMPOUND procedure, and
+that operation 2 is reserved for future definition and use with
+minor versioning ({{Section 15.2.3 of RFC7530}}, {{Section 16.2.3
+of RFC8881}}).  All other unassigned values are available for
+assignment.
 
 | Value | Name | Versions | Reference |
 |------:|------|----------|-----------|
@@ -482,10 +481,11 @@ indicate failure is NFS4_OK.
 
 Values below 10000 mirror the NFS version 3 status codes
 {{RFC1813}}, which in turn match traditional errno values, and are
-not available for assignment.  Value 10002 is Reserved because the
-NFSv3 status code with that value, NFS3ERR_NOT_SYNC, has no NFSv4
-counterpart, and value 10073 is Reserved because {{RFC5662}} left it
-unused.  All other unassigned values of 10001 or above are available
+not available for assignment.  Value 19 is Reserved because
+{{RFC3010}} assigned it to NFS4ERR_NODEV and its successors dropped
+that code.  Value 10002 is Reserved because the NFSv3 status code
+with that value, NFS3ERR_NOT_SYNC, has no NFSv4 counterpart, and
+value 10073 is Reserved because {{RFC5662}} left it unused.  All other unassigned values of 10001 or above are available
 for assignment.
 
 The XDR constants for the base minor versions appear in the
@@ -502,6 +502,7 @@ companion XDR descriptions {{RFC7531}}, {{RFC5662}}, and
 | 13 | NFS4ERR_ACCESS | 4.0+ | {{RFC7530}} |
 | 17 | NFS4ERR_EXIST | 4.0+ | {{RFC7530}} |
 | 18 | NFS4ERR_XDEV | 4.0+ | {{RFC7530}} |
+| 19 | Reserved | | |
 | 20 | NFS4ERR_NOTDIR | 4.0+ | {{RFC7530}} |
 | 21 | NFS4ERR_ISDIR | 4.0+ | {{RFC7530}} |
 | 22 | NFS4ERR_INVAL | 4.0+ | {{RFC7530}} |
