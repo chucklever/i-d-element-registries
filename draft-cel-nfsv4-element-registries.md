@@ -185,8 +185,8 @@ publication of this document onward:
 
 * Values are assigned sequentially, starting from the lowest
   unassigned value that is not reserved and is within the range the
-  registry makes available for assignment.  IANA MUST NOT assign a
-  value that has been previously assigned, even if the corresponding
+  registry makes available for assignment.  A value that has been
+  assigned is never assigned again, even if the corresponding
   element has since been withdrawn from every minor version, because
   {{Section 4.2 of RFC8178}} prohibits reuse of a value.
 
