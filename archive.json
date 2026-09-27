@@ -1,0 +1,124 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2026-09-27T04:03:11.180657+00:00",
+  "repo": "chucklever/i-d-element-registries",
+  "labels": [
+    {
+      "name": "accessibility",
+      "description": "Barrier affecting people with disabilities",
+      "color": "f143ab"
+    },
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 1,
+      "id": "I_kwDOUreSE88AAAABTOMzSw",
+      "title": "Reserved versus unassigned for values 0-2 and status codes 10002 and 10073",
+      "url": "https://github.com/chucklever/i-d-element-registries/issues/1",
+      "state": "OPEN",
+      "author": "chucklever",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Whether values 0 through 2 in the operation registries, and 10002\nand 10073 in the status code registry, should be marked Reserved,\nas this revision does, or simply left unassigned.",
+      "createdAt": "2026-09-25T15:31:11Z",
+      "updatedAt": "2026-09-25T15:31:11Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 2,
+      "id": "I_kwDOUreSE88AAAABTOMz9g",
+      "title": "Register the OPEN share_deny flags alongside share_access",
+      "url": "https://github.com/chucklever/i-d-element-registries/issues/2",
+      "state": "OPEN",
+      "author": "chucklever",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Whether the OPEN share_deny flags, which no document since\n{{RFC5661}} has extended, should nevertheless be registered\nalongside the share_access flags.",
+      "createdAt": "2026-09-25T15:31:12Z",
+      "updatedAt": "2026-09-25T15:31:12Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOUreSE88AAAABTOM0qQ",
+      "title": "Whether NFSv4.0 elements should also cite RFC 8881 in the Reference column",
+      "url": "https://github.com/chucklever/i-d-element-registries/issues/3",
+      "state": "OPEN",
+      "author": "chucklever",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Whether the Reference column for an element introduced in NFSv4.0\nshould also cite {{RFC8881}}, which restates every NFSv4.0\nelement.  This revision cites only the introducing specification\nand the documents that change the element.",
+      "createdAt": "2026-09-25T15:31:13Z",
+      "updatedAt": "2026-09-25T15:31:13Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOUreSE88AAAABTOM1cA",
+      "title": "RFC 8881 section headings with wrong numeric values",
+      "url": "https://github.com/chucklever/i-d-element-registries/issues/4",
+      "state": "OPEN",
+      "author": "chucklever",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "Several section headings in {{RFC8881}} carry the wrong numeric\nvalue: {{Section 15.1.5.2 of RFC8881}} (NFS4ERR_BAD_STATEID, 10025,\nshown as 10026), {{Section 15.1.3.12 of RFC8881}}\n(NFS4ERR_UNSAFE_COMPOUND, 10069, shown as 10068), and\n{{Section 15.1.16.3 of RFC8881}} (NFS4ERR_NXIO, 6, shown as 5).\nThe registry uses the values from the XDR in {{RFC5662}}.  Errata\nshould be filed if none exist.",
+      "createdAt": "2026-09-25T15:31:14Z",
+      "updatedAt": "2026-09-25T15:31:14Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": []
+}
