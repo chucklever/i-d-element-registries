@@ -3,10 +3,10 @@
 
 
 Network File System Version 4                              C. Lever, Ed.
-Internet-Draft                                         25 September 2026
+Internet-Draft                                            9 October 2026
 Updates: 8178 (if approved)                                             
 Intended status: Standards Track                                        
-Expires: 29 March 2027
+Expires: 12 April 2027
 
 
      Registries of Network File System Version 4 Protocol Elements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 March 2027.
+   This Internet-Draft will expire on 12 April 2027.
 
 Copyright Notice
 
@@ -1291,9 +1291,7 @@ Table of Contents
               NFSv4", RFC 8276, DOI 10.17487/RFC8276, December 2017,
               <https://www.rfc-editor.org/rfc/rfc8276>.
 
-   [RFC8587]  Lever, C., Ed. and D. Noveck, "NFS Version 4.0 Trunking
-              Update", RFC 8587, DOI 10.17487/RFC8587, May 2019,
-              <https://www.rfc-editor.org/rfc/rfc8587>.
+   [RFC8587]  "*** BROKEN REFERENCE ***".
 
    [RFC8881]  Noveck, D., Ed. and C. Lever, "Network File System (NFS)
               Version 4 Minor Version 1 Protocol", RFC 8881,
@@ -1307,19 +1305,14 @@ Table of Contents
 
 6.2.  Informative References
 
-   [RFC1813]  Callaghan, B., Pawlowski, B., and P. Staubach, "NFS
-              Version 3 Protocol Specification", RFC 1813,
-              DOI 10.17487/RFC1813, June 1995,
-              <https://www.rfc-editor.org/rfc/rfc1813>.
+   [RFC1813]  "*** BROKEN REFERENCE ***".
 
    [RFC3010]  Shepler, S., Callaghan, B., Robinson, D., Thurlow, R.,
               Beame, C., Eisler, M., and D. Noveck, "NFS version 4
               Protocol", RFC 3010, DOI 10.17487/RFC3010, December 2000,
               <https://www.rfc-editor.org/rfc/rfc3010>.
 
-   [RFC4506]  Eisler, M., Ed., "XDR: External Data Representation
-              Standard", STD 67, RFC 4506, DOI 10.17487/RFC4506, May
-              2006, <https://www.rfc-editor.org/rfc/rfc4506>.
+   [RFC4506]  "*** BROKEN REFERENCE ***".
 
    [RFC5661]  Shepler, S., Ed., Eisler, M., Ed., and D. Noveck, Ed.,
               "Network File System (NFS) Version 4 Minor Version 1
@@ -1378,8 +1371,8 @@ Acknowledgments
 
    Thanks to Éric Vyncke for suggesting this approach.
 
-   The editor is grateful to Bill Baker, Greg Marsden, and Martin
-   Thomson for their input and support.
+   The editor is grateful to Bill Baker, Greg Marsden, Tom Talpey, and
+   Martin Thomson for their input and support.
 
    Special thanks to Area Director Gorry Fairhurst, NFSv4 Working Group
    Chair Brian Pawlowski, and NFSv4 Working Group Secretary Thomas
