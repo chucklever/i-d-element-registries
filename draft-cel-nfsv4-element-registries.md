@@ -894,6 +894,7 @@ Thanks to Éric Vyncke for suggesting this approach.
 The editor is grateful to
 Bill Baker,
 Greg Marsden,
+Tom Talpey,
 and
 Martin Thomson
 for their input and support.
