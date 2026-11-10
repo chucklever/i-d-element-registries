@@ -305,6 +305,20 @@ registration policies, contents, and references are unchanged, and
 the registry format and allocation rules in this document do not
 apply to them.
 
+The "NFSv4 Device ID Notifications", "NFSv4 Recallable Object
+Types", and "pNFS Layout Types" registries record minor versions
+differently from the registries this document creates.  Their
+"Minor Versions" column lists each minor version as a bare number.
+{{Section 22 of RFC8881}} asks a Designated Expert to review the
+column each time a new minor version is approved, and no such review
+has been recorded.  Every entry in the three registries lists only
+minor version 1, although {{Section 8.2 of RFC8178}} makes each
+element available in NFSv4.2 as well.  The "Versions" column defined
+in {{iana-columns}} uses an open range instead, so an entry remains
+correct when its element carries into a later minor version.  This
+document does not convert the three registries to the range
+notation.
+
 ## Registry Format {#iana-columns}
 
 Each registry created by this document has the following columns.
