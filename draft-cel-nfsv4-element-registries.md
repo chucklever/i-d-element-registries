@@ -280,8 +280,29 @@ registries described in {{iana-ops}}, {{iana-cb-ops}},
 {{iana-open-access}}, {{iana-open-result}}, and
 {{iana-open-deleg}}.  Future documents may add
 registries for other NFSv4 numeric protocol elements to this group.
-This document does not request that the existing NFSv4 registries
-created by {{Section 22 of RFC8881}} be moved into the group.
+
+Each of the NFSv4 registries created by {{Section 22 of RFC8881}}
+currently forms a registry group of its own.  So that all NFSv4
+registries are listed in one place, IANA is also requested to move
+the registries in the following groups into the "Network File
+System Version 4 (NFSv4) Parameters" group:
+
+* "NFSv4 Named Attribute Definitions"
+
+* "NFSv4 Device ID Notifications"
+
+* "NFSv4 Recallable Object Types"
+
+* "pNFS Layout Types"
+
+* "NFSv4 Path Variables", which also contains the "NFSv4
+  ${ietf.org:CPU_ARCH} Values" and "NFSv4 ${ietf.org:OS_TYPE}
+  Values" registries
+
+The move changes only where these registries are listed.  Their
+registration policies, contents, and references are unchanged, and
+the registry format and allocation rules in this document do not
+apply to them.
 
 ## Registry Format {#iana-columns}
 
