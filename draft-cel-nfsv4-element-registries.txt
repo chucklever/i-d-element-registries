@@ -3,10 +3,10 @@
 
 
 Network File System Version 4                              C. Lever, Ed.
-Internet-Draft                                            9 October 2026
+Internet-Draft                                          10 November 2026
 Updates: 8178 (if approved)                                             
 Intended status: Standards Track                                        
-Expires: 12 April 2027
+Expires: 14 May 2027
 
 
      Registries of Network File System Version 4 Protocol Elements
@@ -57,7 +57,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 April 2027.
+   This Internet-Draft will expire on 14 May 2027.
 
 Copyright Notice
 
@@ -196,9 +196,10 @@ Table of Contents
       in a document published as a Proposed Standard.  The registration
       policy for each registry is therefore Standards Action with Expert
       Review (Sections 4.5 and 4.9 of [RFC8126]), which admits exactly
-      that class of document and matches the policy of the other NFSv4
-      registries created by Section 22 of [RFC8881].  The role of the
-      Designated Expert is described in Section 3.3.
+      that class of document and matches the policy of the "NFSv4 Device
+      ID Notifications", "NFSv4 Recallable Object Types", and "pNFS
+      Layout Types" registries created by Section 22 of [RFC8881].  The
+      role of the Designated Expert is described in Section 3.3.
 
    *  The document that specifies a new element MUST include an IANA
       Considerations section requesting that the element be added to the
@@ -307,9 +308,43 @@ Table of Contents
    registries described in Section 5.3, Section 5.4, Section 5.5,
    Section 5.6, Section 5.7, Section 5.8, Section 5.9, and Section 5.10.
    Future documents may add registries for other NFSv4 numeric protocol
-   elements to this group.  This document does not request that the
-   existing NFSv4 registries created by Section 22 of [RFC8881] be moved
-   into the group.
+   elements to this group.
+
+   Each of the NFSv4 registries created by Section 22 of [RFC8881]
+   currently forms a registry group of its own.  So that all NFSv4
+   registries are listed in one place, IANA is also requested to move
+   the registries in the following groups into the "Network File System
+   Version 4 (NFSv4) Parameters" group:
+
+   *  "NFSv4 Named Attribute Definitions"
+
+   *  "NFSv4 Device ID Notifications"
+
+   *  "NFSv4 Recallable Object Types"
+
+   *  "pNFS Layout Types"
+
+   *  "NFSv4 Path Variables", which also contains the "NFSv4
+      ${ietf.org:CPU_ARCH} Values" and "NFSv4 ${ietf.org:OS_TYPE}
+      Values" registries
+
+   The move changes only where these registries are listed.  Their
+   registration policies, contents, and references are unchanged, and
+   the registry format and allocation rules in this document do not
+   apply to them.
+
+   The "NFSv4 Device ID Notifications", "NFSv4 Recallable Object Types",
+   and "pNFS Layout Types" registries record minor versions differently
+   from the registries this document creates.  Their "Minor Versions"
+   column lists each minor version as a bare number.  Section 22 of
+   [RFC8881] asks a Designated Expert to review the column each time a
+   new minor version is approved, and no such review has been recorded.
+   Every entry in the three registries lists only minor version 1,
+   although Section 8.2 of [RFC8178] makes each element available in
+   NFSv4.2 as well.  The "Versions" column defined in Section 5.2 uses
+   an open range instead, so an entry remains correct when its element
+   carries into a later minor version.  This document does not convert
+   the three registries to the range notation.
 
 5.2.  Registry Format
 
@@ -1291,7 +1326,9 @@ Table of Contents
               NFSv4", RFC 8276, DOI 10.17487/RFC8276, December 2017,
               <https://www.rfc-editor.org/rfc/rfc8276>.
 
-   [RFC8587]  "*** BROKEN REFERENCE ***".
+   [RFC8587]  Lever, C., Ed. and D. Noveck, "NFS Version 4.0 Trunking
+              Update", RFC 8587, DOI 10.17487/RFC8587, May 2019,
+              <https://www.rfc-editor.org/rfc/rfc8587>.
 
    [RFC8881]  Noveck, D., Ed. and C. Lever, "Network File System (NFS)
               Version 4 Minor Version 1 Protocol", RFC 8881,
@@ -1305,14 +1342,19 @@ Table of Contents
 
 6.2.  Informative References
 
-   [RFC1813]  "*** BROKEN REFERENCE ***".
+   [RFC1813]  Callaghan, B., Pawlowski, B., and P. Staubach, "NFS
+              Version 3 Protocol Specification", RFC 1813,
+              DOI 10.17487/RFC1813, June 1995,
+              <https://www.rfc-editor.org/rfc/rfc1813>.
 
    [RFC3010]  Shepler, S., Callaghan, B., Robinson, D., Thurlow, R.,
               Beame, C., Eisler, M., and D. Noveck, "NFS version 4
               Protocol", RFC 3010, DOI 10.17487/RFC3010, December 2000,
               <https://www.rfc-editor.org/rfc/rfc3010>.
 
-   [RFC4506]  "*** BROKEN REFERENCE ***".
+   [RFC4506]  Eisler, M., Ed., "XDR: External Data Representation
+              Standard", STD 67, RFC 4506, DOI 10.17487/RFC4506, May
+              2006, <https://www.rfc-editor.org/rfc/rfc4506>.
 
    [RFC5661]  Shepler, S., Ed., Eisler, M., Ed., and D. Noveck, Ed.,
               "Network File System (NFS) Version 4 Minor Version 1
