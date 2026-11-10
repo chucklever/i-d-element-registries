@@ -166,8 +166,9 @@ publication of this document onward:
   registration policy for each registry is therefore Standards
   Action with Expert Review ({{Sections 4.5 and 4.9 of RFC8126}}),
   which admits exactly that class of document and matches the
-  policy of the other NFSv4 registries created by {{Section 22 of
-  RFC8881}}.  The role of the Designated Expert is described in
+  policy of the "NFSv4 Device ID Notifications", "NFSv4 Recallable
+  Object Types", and "pNFS Layout Types" registries created by
+  {{Section 22 of RFC8881}}.  The role of the Designated Expert is described in
   {{expert}}.
 
 * The document that specifies a new element MUST include an IANA
